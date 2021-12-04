@@ -46,16 +46,19 @@ namespace List
             return;
         }
 
+        //Наивная реализация для проверки
         public static void FindElementsNaive(List<uint> list, ulong sum, out int start, out int end)
         {
             end = 0;
             start = 0;
 
+            //перебираем все пары
             for (int i = 0; i < list.Count; i++)
             {
                 for (int j = i; j <= list.Count; j++)
                 {
                     ulong cursum = 0;
+                    //находим сумму от i до j
                     for (int index = i; index < j; index++)
                     {
                         cursum += list[index];

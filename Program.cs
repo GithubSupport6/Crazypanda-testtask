@@ -5,7 +5,7 @@ namespace List
 {
     class Program
     {
-        public static void FindElementsForSum(List<uint> list, ulong sum, out int start, out int end)
+        public void FindElementsForSum(List<uint> list, ulong sum, out int start, out int end)
         {
             start = 0;
             end = 0;
@@ -76,7 +76,7 @@ namespace List
             int end = 0;
             int startExp = 0;
             int endExp = 0;
-            FindElementsForSum(list, sum, out start, out end);
+            new Program().FindElementsForSum(list, sum, out start, out end);
             FindElementsNaive(list, sum, out startExp, out endExp);
             Console.WriteLine("Test results expected: {0},{1}, got: {2},{3}", startExp, endExp, start, end);
             Console.WriteLine("Results = exprected results: {0}", start == startExp && end == endExp);
